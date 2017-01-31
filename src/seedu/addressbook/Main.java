@@ -111,7 +111,7 @@ public class Main {
             	storage.save(addressBook);
             }
             catch  (StorageOperationException e) {
-            	throw new RuntimeException(e);
+            	throw new RuntimeException(e);//
             }
             return result;
         } catch (Exception e) {
