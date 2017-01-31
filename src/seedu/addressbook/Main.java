@@ -107,7 +107,12 @@ public class Main {
         try {
             command.setData(addressBook, lastShownList);
             CommandResult result = command.execute();
+            try{
             storage.save(addressBook);
+            }
+            catch  (StorageOperationException e) {
+            	throw new RuntimeException(e);
+            }
             return result;
         } catch (Exception e) {
             ui.showToUser(e.getMessage());
