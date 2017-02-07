@@ -60,4 +60,16 @@ public class Name {
         return fullName.hashCode();
     }
 
+    public boolean isSimilar(Name other){
+    	String[] otherParts = other.fullName.split(" ");
+    	String[] thisParts = fullName.split(" ");
+    	for(String otherPart : otherParts){
+    		for(String thisPart : thisParts){
+    			if(otherPart.equals(thisPart)){
+    				return true;
+    			}
+    		}
+    	}
+    	return false;
+    }
 }
